@@ -1,0 +1,16 @@
+[package]
+name = "disqualified"
+version = "1.0.0"
+edition = "2021"
+description = "Make rust type names more user-readable"
+# homepage = "https://bevyengine.org"
+repository = "https://github.com/bevyengine/disqualified"
+license = "MIT OR Apache-2.0"
+keywords = ["bevy", "type", "name", "short", "log"]
+rust-version = "1.65.0"
+
+[features]
+default = ["alloc"]
+alloc = []
+
+[dependencies]
