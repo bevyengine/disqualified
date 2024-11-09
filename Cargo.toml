@@ -3,7 +3,7 @@ name = "disqualified"
 version = "1.0.0"
 edition = "2021"
 description = "Make rust type names more user-readable"
-# homepage = "https://bevyengine.org"
+homepage = "https://github.com/bevyengine/disqualified"
 repository = "https://github.com/bevyengine/disqualified"
 license = "MIT OR Apache-2.0"
 keywords = ["bevy", "type", "name", "short", "log"]
@@ -14,3 +14,44 @@ default = ["alloc"]
 alloc = []
 
 [dependencies]
+
+[lib]
+
+[workspace]
+exclude = ["benches", "compile_fail", "tools/compile_fail_utils"]
+members = ["errors", ".", "benches"]
+
+[workspace.lints.clippy]
+doc_markdown = "warn"
+manual_let_else = "warn"
+match_same_arms = "warn"
+redundant_closure_for_method_calls = "warn"
+redundant_else = "warn"
+semicolon_if_nothing_returned = "warn"
+undocumented_unsafe_blocks = "warn"
+unwrap_or_default = "warn"
+ptr_as_ptr = "warn"
+ptr_cast_constness = "warn"
+ref_as_ptr = "warn"
+std_instead_of_core = "warn"
+std_instead_of_alloc = "warn"
+alloc_instead_of_core = "warn"
+
+[workspace.lints.rust]
+missing_docs = "warn"
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(docsrs_dep)'] }
+unsafe_code = "deny"
+unsafe_op_in_unsafe_fn = "warn"
+unused_qualifications = "warn"
+
+# Examples
+
+[[example]]
+name = "short_name"
+path = "examples/demonstrations/short_name.rs"
+doc-scrape-examples = true
+
+[package.metadata.example.short_name]
+name = "short_name"
+description = "Demonstrates the functionality of `short_name`."
+category = "Demonstration"
