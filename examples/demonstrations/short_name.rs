@@ -1,0 +1,4 @@
+use disqualified::*;
+
+fn main() {
+}
