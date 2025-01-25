@@ -2,4 +2,4 @@
 
 mod short_name;
 
-pub use short_name::ShortName;
+pub use short_name::{DisplayShortName, ShortName};
